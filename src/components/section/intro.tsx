@@ -10,13 +10,10 @@ export default function Intro() {
       <div css={inWrapper}>
         <div css={contentWrapper}>
           <h1 css={title}>CodingBottle</h1>
-          <p css={subTitle}>
-            끊임없이 흘러가는 우리, Developer X Designer 코딩보틀
-          </p>
+          <p css={subTitle}>끊임없이 흘러가는 우리</p>
+          <p css={subTitle}>Developer X Designer 코딩보틀</p>
         </div>
-        <div>
-          <LottieWrapper lottieData={bgLottie} />
-        </div>
+        <div></div>
       </div>
     </section>
   );
@@ -26,6 +23,7 @@ const wrapper = css`
   position: relative;
   width: 100%;
   height: 100%;
+  background-color: green;
 `;
 
 const inWrapper = css`
@@ -43,19 +41,10 @@ const title = css`
   font-size: 3.6rem;
   font-weight: ${theme.fontWeight.bold};
   letter-spacing: 0.6px;
-
-  @media (max-width: 380px) {
-    font-size: 3rem;
-  }
 `;
-
 const subTitle = css`
-  font-size: 1rem;
-  color: ${theme.color.text};
+  font-size: 3rem;
+  color: ${theme.color.white};
   font-weight: ${theme.fontWeight.light};
-
-  @media (max-width: 380px) {
-    font-size: 0.87rem;
-    margin-top: 0.5rem;
-  }
+  margin-top: 0.5rem;
 `;

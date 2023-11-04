@@ -19,9 +19,29 @@ export default function App({ Component, pageProps }: AppProps) {
         <GlobalStyle />
         <Layout>
           <nav css={navCss}>
-            <Link href="/">
-              <Image src={logo} alt="logo" width={50} height={50} />
-            </Link>
+            <ul>
+              <li class="on">
+                <a href="/">메인</a>
+              </li>
+              <li class="">
+                <a href="#solution">목적</a>
+              </li>
+              <li class="">
+                <a href="#features">파트</a>
+              </li>
+              <li class="">
+                <a href="#example">모집</a>
+              </li>
+              <li class="">
+                <a href="#brand">FAQ</a>
+              </li>
+              <li class="">
+                <a href="#use">항해자</a>
+              </li>
+              <li class="">
+                <a href="#download">문의</a>
+              </li>
+            </ul>
           </nav>
           <Component {...pageProps} />
         </Layout>
@@ -44,9 +64,8 @@ function Layout({ children }: PropsWithChildren<{}>) {
 const layoutCss = css`
   height: calc(var(--var, 1vh) * 100);
   width: 100vw;
-  max-width: 480px;
   margin: 0 auto;
-  background-color: ${theme.color.warmBlack};
+  background-color: purple;
 `;
 
 const navCss = css`
@@ -58,5 +77,36 @@ const navCss = css`
 
   @media (max-width: 380px) {
     padding: 1rem 0.9rem;
+  }
+
+  h1 {
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    color: black;
+    display: inline-block;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 0;
+    transform: skew(0.1deg);
+    list-style: none;
+    vertical-align: baseline;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    margin: 0 1rem;
+  }
+  a {
+    background-color: var(--color-primary);
+    color: #fff;
   }
 `;
