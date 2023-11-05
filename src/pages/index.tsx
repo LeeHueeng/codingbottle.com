@@ -56,8 +56,9 @@ export default function Home() {
 
 const wrapper = css`
   overflow-y: scroll;
-  height: calc(var(--var, 1vh) * 300);
+  height: 100vw;
   width: 100vw;
+  padding: 0 10%;
   margin: 0 auto;
-  background-color: yellow;
+  background-color: ${theme.color.warmBlack};
 `;

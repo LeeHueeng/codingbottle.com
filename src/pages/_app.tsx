@@ -17,28 +17,29 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <LazyMotion features={domMax}>
         <GlobalStyle />
+
         <Layout>
           <nav css={navCss}>
             <ul>
-              <li class="on">
+              <li className="navbar">
                 <a href="/">메인</a>
               </li>
-              <li class="">
+              <li className="navbar">
                 <a href="#solution">목적</a>
               </li>
-              <li class="">
+              <li className="navbar">
                 <a href="#features">파트</a>
               </li>
-              <li class="">
+              <li className="navbar">
                 <a href="#example">모집</a>
               </li>
-              <li class="">
+              <li className="navbar">
                 <a href="#brand">FAQ</a>
               </li>
-              <li class="">
+              <li className="navbar">
                 <a href="#use">항해자</a>
               </li>
-              <li class="">
+              <li className="navbar">
                 <a href="#download">문의</a>
               </li>
             </ul>
@@ -62,10 +63,10 @@ function Layout({ children }: PropsWithChildren<{}>) {
 }
 
 const layoutCss = css`
-  height: calc(var(--var, 1vh) * 100);
+  height: 10%;
   width: 100vw;
   margin: 0 auto;
-  background-color: purple;
+  background-color: ${theme.color.warmBlack};
 `;
 
 const navCss = css`
@@ -75,16 +76,6 @@ const navCss = css`
   width: 100%;
   padding: 1.5rem;
 
-  @media (max-width: 380px) {
-    padding: 1rem 0.9rem;
-  }
-
-  h1 {
-    margin-left: 0.5rem;
-    font-size: 1.5rem;
-    color: black;
-    display: inline-block;
-  }
   ul {
     display: flex;
     align-items: center;
@@ -94,19 +85,30 @@ const navCss = css`
     transform: skew(0.1deg);
     list-style: none;
     vertical-align: baseline;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+
     padding-inline-start: 40px;
   }
-  li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-    margin: 0 1rem;
-  }
-  a {
-    background-color: var(--color-primary);
-    color: #fff;
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 2rem;
+    border-radius: 10rem;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    a {
+      color: ${theme.color.text};
+      text-decoration: none;
+    }
+    &:hover {
+      background-color: ${theme.color.warmGray};
+      a {
+        color: ${theme.color.black};
+      }
+    }
   }
 `;
