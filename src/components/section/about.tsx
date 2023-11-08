@@ -7,45 +7,30 @@ import Number from "components/text/number";
 import Point from "components/text/point";
 import SectionAbout from "components/text/sectionAbout";
 import theme from "styles/theme/theme";
-
+import Chat from "components/text/chat";
 export default function About() {
   return (
     <section css={wrapper}>
       <div css={itemWrapper}>
         <div css={zIndexWrapper}>
-          <Number num="1" title="Introduce" />
           <SectionAbout
-            title="What is codingBottle?"
+            title="What is coding Bottle?"
             subTitle="더 멀리 항해하자, 코딩보틀!"
           />
         </div>
-        <LottieWrapper lottieData={personBoat} />
       </div>
-      <Point title="" content="🌊 파도를 헤쳐 글씨를 찾아보세요" />
-      <div css={marginWrapper}>
-        <Point
-          title="5개월 동안 진행!"
-          content="🎓 24년 졸업 예정자도 문제 없어요"
-        />
-      </div>
-      <div css={rightWrapper}>
-        <Point
-          title="멋진 사람들과 함께"
-          content="열정있는 사람들이 모여 만들어졌어요 ❤️‍🔥"
-        />
-      </div>
-      <div css={marginWrapper}>
-        <Point
-          title="넓은 경험"
-          content="🎨디자이너와 🧑🏻‍💻개발자가 함께 협업해요"
-        />
-      </div>
-      <div css={rightWrapper}>
-        <Point
-          title="좋은 경험, 좋은 추억!"
-          content="해커톤, 컨퍼런스 등 유익한 경험 같이해요 🏆"
-        />
-      </div>
+
+      <Chat title="question" date="사이드 프로젝트 할만한 곳없을까?" />
+      <Chat title="result" date="coding bottle로 와!" />
+      <Chat title="question" date="어떤 곳인데?" />
+      <Chat title="result" date="3~4학년들이 많고 바로 프로젝트 할 수 있어" />
+      <Chat title="question" date="어떤파트들 있는데?" />
+      <Chat
+        title="result"
+        date="디자이너, 웹, 앱 모두 있어서 쉽게 프로젝트 할 수 있어"
+      />
+      <Chat title="question" date="어떤 사람을 뽑아?" />
+      <Chat title="result" date="열정이 있는 사람을 뽑아" />
     </section>
   );
 }

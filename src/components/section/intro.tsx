@@ -31,7 +31,7 @@ export default function Intro() {
 
 const wrapper = css`
   width: 100%;
-  height: 100%;
+  height: 50%;
 `;
 
 const inWrapper = css`
@@ -39,9 +39,9 @@ const inWrapper = css`
 `;
 
 const contentWrapper = css`
-  position: absolute;
+  position: relative;
   z-index: 3;
-  margin-top: 10%;
+  margin-top: 3%;
   top: 10%;
   left: 10%;
 `;
@@ -58,18 +58,18 @@ const subTitle = css`
   font-weight: ${theme.fontWeight.light};
 `;
 const img_1 = css`
-  z-index: 2;
-  position: absolute;
-  right: 40%;
-  top: 40%;
+  z-index: 1;
+  position: relative;
+  left: 40vw;
+  bottom: 8vw;
   width: 400px;
   height: 400px;
 `;
 const img_2 = css`
-  z-index: 1;
-  position: absolute;
-  left: 60%;
-  top: 20%;
+  z-index: 2;
+  position: relative;
+  left: 50vw;
+  bottom: 20vw;
   width: 400px;
   height: 400px;
 `;
