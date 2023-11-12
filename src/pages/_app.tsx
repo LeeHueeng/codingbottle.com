@@ -17,11 +17,32 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <LazyMotion features={domMax}>
         <GlobalStyle />
+
         <Layout>
           <nav css={navCss}>
-            <Link href="/">
-              <Image src={logo} alt="logo" width={50} height={50} />
-            </Link>
+            <ul>
+              <li className="navbar">
+                <a href="/">메인</a>
+              </li>
+              <li className="navbar">
+                <a href="#solution">목적</a>
+              </li>
+              <li className="navbar">
+                <a href="#features">파트</a>
+              </li>
+              <li className="navbar">
+                <a href="#example">모집</a>
+              </li>
+              <li className="navbar">
+                <a href="#brand">FAQ</a>
+              </li>
+              <li className="navbar">
+                <a href="#use">항해자</a>
+              </li>
+              <li className="navbar">
+                <a href="#download">문의</a>
+              </li>
+            </ul>
           </nav>
           <Component {...pageProps} />
         </Layout>
@@ -42,9 +63,8 @@ function Layout({ children }: PropsWithChildren<{}>) {
 }
 
 const layoutCss = css`
-  height: calc(var(--var, 1vh) * 100);
+  height: 10%;
   width: 100vw;
-  max-width: 480px;
   margin: 0 auto;
   background-color: ${theme.color.warmBlack};
 `;
@@ -56,7 +76,39 @@ const navCss = css`
   width: 100%;
   padding: 1.5rem;
 
-  @media (max-width: 380px) {
-    padding: 1rem 0.9rem;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 0;
+    transform: skew(0.1deg);
+    list-style: none;
+    vertical-align: baseline;
+
+    padding-inline-start: 40px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 2rem;
+    border-radius: 10rem;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    a {
+      color: ${theme.color.text};
+      text-decoration: none;
+    }
+    &:hover {
+      background-color: ${theme.color.warmGray};
+      a {
+        color: ${theme.color.black};
+      }
+    }
   }
 `;

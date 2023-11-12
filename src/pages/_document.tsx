@@ -46,8 +46,10 @@ ChannelIO('boot', {
           }}
         ></script>
       </Head>
+
       <body>
         <Main />
+
         <NextScript />
       </body>
     </Html>

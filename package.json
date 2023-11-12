@@ -13,7 +13,6 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@next/font": "13.4.19",
-    "@types/node": "20.5.4",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "classcat": "^5.0.4",
@@ -23,8 +22,7 @@
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-lottie": "^1.2.3",
-    "typescript": "5.1.6"
+    "react-lottie": "^1.2.3"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.3.2",
@@ -35,8 +33,10 @@
     "@storybook/nextjs": "^7.3.2",
     "@storybook/react": "^7.3.2",
     "@storybook/testing-library": "^0.2.0",
+    "@types/node": "20.8.10",
     "@types/react-lottie": "^1.2.6",
-    "eslint-plugin-storybook": "^0.6.13"
+    "eslint-plugin-storybook": "^0.6.13",
+    "typescript": "5.2.2"
   },
   "overrides": {
     "react-lottie": {
