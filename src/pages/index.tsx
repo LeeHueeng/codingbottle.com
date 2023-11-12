@@ -30,7 +30,6 @@ export default function Home() {
         <Intro />
         <About />
         <div id="team">
-          <Number num="2" title="Team composition" />
           <Team />
         </div>
         <div id="recruit">

@@ -1,18 +1,19 @@
 /** @jsxImportSource @emotion/react */
 
 import { css, ThemeProvider } from "@emotion/react";
-import logo from "assets/images/logo.png";
 import { domMax, LazyMotion } from "framer-motion";
 import useWindowSize from "hooks/useWindowSize";
 import type { AppProps } from "next/app";
-import Image from "next/image";
-import Link from "next/link";
 import { PropsWithChildren, useEffect } from "react";
 import GlobalStyle from "styles/GlobalStyle";
 import theme from "styles/theme/theme";
 let vh = 0;
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <LazyMotion features={domMax}>
@@ -30,17 +31,18 @@ export default function App({ Component, pageProps }: AppProps) {
               <li className="navbar">
                 <a href="#features">파트</a>
               </li>
-              <li className="navbar">
-                <a href="#example">모집</a>
+              <li css={center}>
+                <div css={music}>▶</div>
+                <p>코요태 - 우리의 꿈</p>
               </li>
               <li className="navbar">
-                <a href="#brand">FAQ</a>
+                <a href="#brand">모집</a>
               </li>
               <li className="navbar">
-                <a href="#use">항해자</a>
+                <a href="#use">FAQ</a>
               </li>
               <li className="navbar">
-                <a href="#download">문의</a>
+                <a href="#download">항해자</a>
               </li>
             </ul>
           </nav>
@@ -61,6 +63,35 @@ function Layout({ children }: PropsWithChildren<{}>) {
 
   return <div css={layoutCss}>{children}</div>;
 }
+
+const center = css`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  p {
+    font-size: 1rem;
+    font-weight: 700;
+    color: ${theme.color.white};
+  }
+`;
+const music = css`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: ${theme.color.white};
+  display: flex;
+  padding-left: 0.7rem;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: ${theme.color.black};
+  &:hover {
+    background-color: ${theme.color.black};
+    color: ${theme.color.white};
+  }
+`;
 
 const layoutCss = css`
   height: 10%;

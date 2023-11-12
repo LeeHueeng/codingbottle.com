@@ -24,9 +24,6 @@ export default function Contect() {
           />
         </div>
       </div>
-      {/* <div css={imgWrapper}>
-        <Image src={sunriseOcean} alt="sunrise ocean" layout="fill" />
-      </div> */}
     </>
   );
 }

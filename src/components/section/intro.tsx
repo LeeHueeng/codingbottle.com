@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import bgLottie from "assets/lottieJSON/wave.json";
 import LottieWrapper from "components/lottieWrapper";
 import theme from "styles/theme/theme";
@@ -14,7 +14,8 @@ export default function Intro() {
         <div css={main}>
           <div css={contentWrapper}>
             <h1 css={title}>CodingBottle</h1>
-            <p css={subTitle}>끊임없이 흘러가는 우리</p>
+            <p css={subTitle}>쉼없이 흘러가는 시간</p>
+            <p css={subTitle}>이대로 보낼 수는 없잖아</p>
             <p css={subTitle}>Developer X Designer 코딩보틀</p>
           </div>
           <div css={img_1}>
@@ -28,6 +29,23 @@ export default function Intro() {
     </section>
   );
 }
+
+const moveUp = keyframes`
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+`;
+const moveLeft = keyframes`
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-20px);
+  }
+`;
 
 const wrapper = css`
   width: 100%;
@@ -44,6 +62,7 @@ const contentWrapper = css`
   margin-top: 3%;
   top: 10%;
   left: 10%;
+  animation: ${moveUp} 2s infinite alternate;
 `;
 
 const title = css`
@@ -61,17 +80,19 @@ const img_1 = css`
   z-index: 1;
   position: relative;
   left: 40vw;
-  bottom: 8vw;
+  bottom: 15vw;
   width: 400px;
   height: 400px;
+  animation: ${moveLeft} 2s infinite alternate;
 `;
 const img_2 = css`
   z-index: 2;
   position: relative;
   left: 50vw;
-  bottom: 20vw;
+  bottom: 30vw;
   width: 400px;
   height: 400px;
+  animation: ${moveLeft} 2s infinite alternate;
 `;
 const main = css`
   width: 100%;
